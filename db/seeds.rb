@@ -20,3 +20,5 @@ User.create {
   password: "password",
   profile_pic: nil
 }
+
+puts 'Users successfully seeded✅'
