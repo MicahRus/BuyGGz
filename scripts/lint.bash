@@ -6,3 +6,5 @@
 
   echo "Running rubocop..."
   bundle exec rubocop -x
+  git add . 
+  git commit -m "Rubocopped some files"
