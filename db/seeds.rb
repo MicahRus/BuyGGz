@@ -24,4 +24,9 @@ User.create({
 
 puts 'Users successfully seeded ✅'
 
+
+puts 'Seeding Games'
+
+
+puts 'Games successfully seeded ✅'
 puts '*' * 24
