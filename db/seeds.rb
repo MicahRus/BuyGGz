@@ -27,11 +27,33 @@ puts 'Users successfully seeded ✅'
 
 puts 'Seeding Games'
 
-Game.create({
-  user_id: 1,
-  title: Faker::Game.title
+3.times do
+  Game.create({
+    user_id: 1,
+    title: Faker::Game.title,
+    cost: (1000..100000),
+    platform: Faker::Game.platform,
+    image: nil ,
+    posted_by: 'test_user_1',
+    posted_on: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
 
-})
+  })
+
+    Game.create({
+    user_id: 2,
+    title: Faker::Game.title,
+    cost: (1000..100000),
+    platform: Faker::Game.platform,
+    image: nil ,
+    posted_by: 'test_user_2',
+    posted_on: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
+
+  })
+
+
+
+
+end
 
 puts 'Games successfully seeded ✅'
 puts '*' * 24
