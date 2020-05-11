@@ -10,6 +10,7 @@ class GamesController < ApplicationController
   def create
     @game = current_user.games.create(game_params)
     if @game.errors.any?
+      @game.errors.full_messages.first
       flash[:failed] = "You failed to create a new game!"
       redirect_to request.referer
     else

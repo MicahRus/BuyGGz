@@ -1,22 +1,4 @@
 <h1> Add a game ! :) </h1>
 
-<%= form_with model: @game, local: true do |form| %>
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :cost %>
-    <%= form.number_field :cost%>
-  </div>
-
-  <div>
-    <%= form.label :platform %>
-    <%= form.text_field :platform %>
-  </div>
-
-  <div>
-   <%= form.submit %>  
-  </div>
-<% end %>
+<%= render 'shared/form', game: @game %>
+<%= flash[:failed] %>

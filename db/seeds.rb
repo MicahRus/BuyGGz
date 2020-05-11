@@ -1,5 +1,15 @@
 
+
 puts '*' * 24
+
+puts "Destroying old data"
+
+User.destroy_all
+Game.destroy_all
+
+puts 'Data successfully destroyed ✅'
+
+puts ""
 puts 'Seeding Users'
 
 User.create({
@@ -39,8 +49,7 @@ random_price_2 = rand(1000..15000).round(-1)
     cost: random_price,
     platform: Faker::Game.platform,
     image: nil ,
-    posted_by: 'test_user_1',
-    posted_on: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
+    posted_by: 'test_user_1'
 
   })
 
@@ -50,8 +59,7 @@ random_price_2 = rand(1000..15000).round(-1)
     cost: random_price_2,
     platform: Faker::Game.platform,
     image: nil ,
-    posted_by: 'test_user_2',
-    posted_on: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
+    posted_by: 'test_user_2'
 
   })
 
