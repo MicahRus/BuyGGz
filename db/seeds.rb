@@ -32,6 +32,7 @@ puts 'Seeding Games'
 
 3.times do
 random_price = rand(1000..15000).round(-1)
+random_price_2 = rand(1000..15000).round(-1)
   Game.create({
     user_id: 1,
     title: Faker::Game.title,
@@ -46,7 +47,7 @@ random_price = rand(1000..15000).round(-1)
     Game.create({
     user_id: 2,
     title: Faker::Game.title,
-    cost: random_price,
+    cost: random_price_2,
     platform: Faker::Game.platform,
     image: nil ,
     posted_by: 'test_user_2',
