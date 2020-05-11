@@ -27,6 +27,11 @@ puts 'Users successfully seeded ✅'
 
 puts 'Seeding Games'
 
+Game.create({
+  user_id: 1,
+  title: Faker::Game.title
+
+})
 
 puts 'Games successfully seeded ✅'
 puts '*' * 24
