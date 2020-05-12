@@ -3,12 +3,7 @@ class GamesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @games = Game.all
-    @search = params["search"]
-    if @search.present?
-      @title = @search["title"]
-      @games = Game.where(title: @title)
-    end
+    @games = Game.search(params[:search])
   end
 
   def show
