@@ -13,6 +13,5 @@ class Game < ApplicationRecord
     else
       Game.all
     end
-
   end
 end
