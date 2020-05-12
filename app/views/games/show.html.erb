@@ -2,6 +2,7 @@
 <h1> Game show page </h1>
 
   <p> 
+  <%= image_tag @game.image if @game.image.attached? %>
    Title: <%= @game.title %> 
     <%= number_to_currency(@game.cost / 100) %> 
     Platform: <%= @game.platform %> 

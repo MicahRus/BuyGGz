@@ -7,7 +7,7 @@
     Title: <%= game.title %> 
       <%= number_to_currency(game.cost / 100) %> 
       Platform: <%= game.platform %> 
-      <%= game.image %> 
+      <%= image_tag game.image if game.image.attached? %> 
       Posted_by: <%= game.posted_by %> 
       Date: <%= game.created_at %> 
   </p>
