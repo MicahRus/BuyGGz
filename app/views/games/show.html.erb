@@ -9,7 +9,13 @@
     Date: <%= @game.created_at %> 
   </p>
 
-<%= render 'shared/form', game: @game %>
 
 
-<%= link_to "Delete", game_path(@game.id), method: :delete, data: { confirm: "Are you sure?" } %>
+
+ <div class="show-edit-delete">
+   <% if can? :edit, @game %>
+     <%= link_to "Edit", edit_game_path(@game.id) %>
+     <%= link_to "Delete", game_path(@game.id), method: :delete %>
+   <% end %>
+   <%= link_to "Back", :back %>
+ </div>
