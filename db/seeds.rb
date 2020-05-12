@@ -16,21 +16,21 @@ User.create({
   username: "test_user_1",
   email: "Test_user_1@gmail.com",
   password: "password",
-  profile_pic: nil
+  profile_pic: Faker::LoremPixel.image
 })
 
 User.create({
   username: "test_user_2",
   email: "Test_user_2@gmail.com",
   password: "password",
-  profile_pic: nil
+  profile_pic: Faker::LoremPixel.image
 })
 
 User.create({
   username: "admin",
   email: "admin@gmail.com",
   password: "password",
-  profile_pic: nil,
+  profile_pic: Faker::LoremPixel.image,
   is_admin: true
 })
 

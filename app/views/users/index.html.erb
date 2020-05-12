@@ -4,10 +4,10 @@
 
 <% @games.each do |game| %>
   <p> 
+      <%= image_tag game.image if game.image.attached? %> 
     Title: <%= game.title %> 
       <%= number_to_currency(game.cost / 100) %> 
       Platform: <%= game.platform %> 
-      <%= image_tag game.image if game.image.attached? %> 
       Posted_by: <%= game.posted_by %> 
       Date: <%= game.created_at %> 
   </p>
