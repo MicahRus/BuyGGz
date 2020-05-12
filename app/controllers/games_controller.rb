@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
-
-before_action :find_game, only: [:index, :show, :edit, :update, :destroy]
+  before_action :find_game, only: [:index, :show, :edit, :update, :destroy]
   def show
   end
 
