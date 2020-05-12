@@ -1,0 +1,6 @@
+<%= render 'shared/navbar' %>
+<h1> Add a game ! :) </h1>
+
+<%= render 'shared/form', game: @game %>
+<%= flash[:failed] %>
+<%= @game.errors.full_messages.first %>
