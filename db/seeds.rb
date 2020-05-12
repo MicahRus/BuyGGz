@@ -30,7 +30,8 @@ User.create({
   username: "admin",
   email: "admin@gmail.com",
   password: "password",
-  profile_pic: nil
+  profile_pic: nil,
+  is_admin: true
 })
 
 puts 'Users successfully seeded ✅'
