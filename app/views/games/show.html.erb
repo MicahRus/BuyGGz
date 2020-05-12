@@ -8,3 +8,6 @@
     Posted_by: <%= @game.posted_by %> 
     Date: <%= @game.posted_on %> 
   </p>
+
+<%= render 'shared/form', game: @game %>
+<%= link_to "Back", :back %>

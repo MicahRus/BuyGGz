@@ -3,11 +3,11 @@
 
 <% @games.each do |game| %>
   <p> 
-   Title: <%= game.title %> 
-    <%= number_to_currency(game.cost / 100) %> 
-    Platform: <%= game.platform %> 
-    <%= game.image %> 
-    Posted_by: <%= game.posted_by %> 
-    Date: <%= game.created_at %> 
+    Title: <%= game.title %> 
+      <%= number_to_currency(game.cost / 100) %> 
+      Platform: <%= game.platform %> 
+      <%= game.image %> 
+      Posted_by: <%= game.posted_by %> 
+      Date: <%= game.created_at %> 
   </p>
 <% end %>

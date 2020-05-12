@@ -17,14 +17,15 @@ ActiveRecord::Schema.define(version: 2020_05_11_060854) do
 
   create_table "games", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title"
-    t.integer "cost"
-    t.string "platform"
+    t.string "title", null: false
+    t.integer "cost", null: false
+    t.string "platform", null: false
     t.text "image"
     t.string "posted_by"
-    t.datetime "created_at", precision: 5, null: false
+    t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_games_on_user_id"
+
   end
 
   create_table "users", force: :cascade do |t|

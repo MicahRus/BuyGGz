@@ -2,3 +2,4 @@
 
 <%= render 'shared/form', game: @game %>
 <%= flash[:failed] %>
+<%= @game.errors.full_messages.first %>

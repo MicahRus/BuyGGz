@@ -9,19 +9,31 @@ class GamesController < ApplicationController
 
   def create
     @game = current_user.games.create(game_params)
-    if @game.errors.any?
-      @game.errors.full_messages.first
-      flash[:failed] = "You failed to create a new game!"
-      redirect_to request.referer
-    else
+    if @game.save
       redirect_to @game
       flash[:success] = "You successfully created a new game!"
+    else
+      flash[:failed] = "You failed to create a new game!:("
+      redirect_to request.referer
     end
   end
 
-  private
+  def edit
+  end
+
+  def update 
+    if @game.update(game_params)
+      redirect_to game_path(@game)
+    else
+      redirect_to request.referer
+       flash[:failed] = "You failed to update a new game!:("
+    end
+  end
+
+
+  private 
 
   def game_params
-    params.require(:game).permit(:title, :cost, :platform)
-  end
+    params.require(:game).permit(:title, :platform, :cost)
+  end 
 end
