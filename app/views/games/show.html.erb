@@ -6,8 +6,10 @@
     Platform: <%= @game.platform %> 
     <%= @game.image %> 
     Posted_by: <%= @game.posted_by %> 
-    Date: <%= @game.posted_on %> 
+    Date: <%= @game.created_at %> 
   </p>
 
 <%= render 'shared/form', game: @game %>
-<%= link_to "Back", :back %>
+
+
+<%= link_to "Delete", game_path(@game.id), method: :delete, data: { confirm: "Are you sure?" } %>

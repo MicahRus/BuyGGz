@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
+
+before_action :find_game, only: [:index, :show, :edit, :update, :destroy]
   def show
-    @game = Game.find(params[:id])
   end
 
   def new
@@ -30,9 +31,18 @@ class GamesController < ApplicationController
     end
   end
 
+  def destroy
+    @game.destroy
+    redirect_to root_path
+  end
+
   private
 
   def game_params
     params.require(:game).permit(:title, :platform, :cost)
+  end
+
+  def find_game
+    @game = Game.find(params[:id])
   end
 end
