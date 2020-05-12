@@ -21,19 +21,18 @@ class GamesController < ApplicationController
   def edit
   end
 
-  def update 
+  def update
     if @game.update(game_params)
       redirect_to game_path(@game)
     else
       redirect_to request.referer
-       flash[:failed] = "You failed to update a new game!:("
+      flash[:failed] = "You failed to update a new game!:("
     end
   end
 
-
-  private 
+  private
 
   def game_params
     params.require(:game).permit(:title, :platform, :cost)
-  end 
+  end
 end
