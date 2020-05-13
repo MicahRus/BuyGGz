@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
-  before_action :find_game, only: [:index, :show, :edit, :update, :destroy]
+  before_action :find_game, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+
+  def index
+    @games = Game.search(params[:search])
+  end
 
   def show
   end

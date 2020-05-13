@@ -1,0 +1,13 @@
+<%= render 'shared/navbar' %>
+
+<h1> Gamess </h1>
+
+<h3>
+  <% @games.each do |game| %>
+    <p><%= link_to game.title, game_path(game) %></p>
+  <% end %>
+
+
+
+
+</h3>
