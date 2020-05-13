@@ -3,7 +3,7 @@ class CartsController < ApplicationController
     if user_signed_in? && current_user.cart
       @cart = current_user.cart.games
     else
-      redirect_to games_path
+      # redirect_to games_path
     end
   end
 
