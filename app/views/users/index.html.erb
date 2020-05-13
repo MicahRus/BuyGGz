@@ -2,13 +2,12 @@
 <h1> Home page la</h1>
 
 
-<% @games.each do |game| %>
-  <p> 
-      <%= image_tag game.image if game.image.attached? %> 
-    Title: <%= game.title %> 
-      <%= number_to_currency(game.cost / 100) %> 
-      Platform: <%= game.platform %> 
-      Posted_by: <%= game.posted_by %> 
-      Date: <%= game.created_at %> 
-  </p>
-<% end %>
+  <div class="container">
+      <div class="row">
+          <div class="col-5 m-auto">
+            <% @games.reverse_each do |game| %>
+              <%= render 'shared/card', game: game %>
+            <% end %>
+          </div>
+      </div>
+  </div>
