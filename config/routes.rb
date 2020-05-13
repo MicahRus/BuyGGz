@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :games
 
   get '/:username', to: 'users#show', as: :username
-  root to: "games#index"
+  root to: "users#index"
 end

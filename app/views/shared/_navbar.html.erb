@@ -26,6 +26,10 @@
         <% if !user_signed_in? %>
             <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %></li>
         <% end %>
+        <%= form_tag(games_path, method: :get) do %>
+          <%= text_field_tag(:search, params[:search]) %>
+          <%= submit_tag ("Search")%>
+        <% end %>
     </ul>
   </div>
 </nav>
