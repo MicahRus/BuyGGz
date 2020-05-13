@@ -9,5 +9,6 @@ class Ability
     can [:edit, :update, :destroy], Game, user_id: user.id
 
     can :manage, :all if user.is_admin == true
+    
   end
 end
