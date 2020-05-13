@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :games, dependent: :destroy
+  has_one :cart, dependent: :destroy
+  has_many :carts, through: :cart_item
 end
