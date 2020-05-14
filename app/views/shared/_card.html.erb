@@ -14,5 +14,12 @@
       <%= link_to 'Add to cart', carts_path(game_id: game.id), method: :post %>
       <a href="#" class="card-link">Add to wishlist</a>
     </div>
+     <% if can? :edit, game %>
+      <div class="card-body">
+        <div class="show-edit-delete">
+          <%= link_to "Edit", edit_game_path(game.id) %>
+          <%= link_to "Delete", game_path(game.id), method: :delete %>
+      </div>
+    <% end %>
   </div>
 <% end %>

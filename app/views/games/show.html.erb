@@ -1,28 +1,13 @@
 <%= render 'shared/navbar' %>
 <h1> Game show page </h1>
 
-  <p> 
-  <%= image_tag @game.image if @game.image.attached? %>
-   Title: <%= @game.title %> 
-    <%= number_to_currency(@game.cost / 100) %> 
-    Platform: <%= @game.platform %> 
-    Posted_by: <%= @game.posted_by %> 
-    Date: <%= @game.created_at %> 
-  </p>
 
+  <div class="container">
+      <div class="row">
+          <div class="col-5 m-auto">
+            <% if @game.sold != true %>
+              <%= render 'shared/card', game: @game %>
+          </div>
+      </div>
+  </div>
 
-
-
- <div class="show-edit-delete">
-   <% if can? :edit, @game %>
-     <%= link_to "Edit", edit_game_path(@game.id) %>
-     <%= link_to "Delete", game_path(@game.id), method: :delete %>
-   <% end %>
-   <% if current_user.id != @game.user_id %>
-      <%= link_to 'Add to cart', carts_path(game_id: @game.id), method: :post %>
-      <%= link_to "Back", :back %>
-   <% end %>
- </div>
-
-  <%= link_to "Checkout", "", id: "stripe" %>
- <%= javascript_pack_tag "stripe" %>

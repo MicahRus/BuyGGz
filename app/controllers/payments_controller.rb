@@ -2,6 +2,9 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:webhook]
   def success
     @cart = current_user.cart
+    @cart.games.each do |game|
+      game.is_sold = true
+    end
     @cart.destroy
   end
 
