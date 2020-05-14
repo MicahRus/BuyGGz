@@ -3,6 +3,7 @@ class CartsController < ApplicationController
     if user_signed_in? && current_user.cart
       @cart = current_user.cart.games
     else
+      flash[:no_cart] = "You currently don't have any items in your cart"
       redirect_to request.referer
     end
   end
@@ -14,7 +15,17 @@ class CartsController < ApplicationController
       cart = current_user.cart
     end
     game = Game.find(params[:game_id])
+    game.in_cart = true
     cart.games << game
+    flash[:added_item] = "Successfully added item to your cart!"
     redirect_to request.referer
   end
+
+  def destroy
+    @cart.cart_item.destroy
+  end
+  # def show
+  #   @cart = current_user.cart.games
+  #   @user = User.find(current_user.id)
+  # end
 end

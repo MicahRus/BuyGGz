@@ -6,16 +6,8 @@
         <div class="col-5 m-auto">
             <% @user.games.reverse_each do |game| %>
                 <%= render 'shared/card', game: game %>
-                <div class="show-edit-delete">
-                <% if can? :edit, game %>
-                  <%= link_to "Edit", edit_game_path(game.id) %>
-                  <%= link_to "Delete", game_path(game.id), method: :delete %>
-                <% end %>
-                  <% if current_user.id != game.user_id %>
-                    <%= link_to 'Add to cart', carts_path(game_id: game.id), method: :post %>
-                    <%= link_to "Pay Deposit", "", id: "stripe" %>
-                    <%= link_to "Back", :back %>
-                <% end %>
+
+      
             <% end %>
           </div>
         </div>

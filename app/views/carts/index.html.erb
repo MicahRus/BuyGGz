@@ -1,12 +1,16 @@
 <%= render 'shared/navbar' %>
 <h1> Cart </h1>
 
-<ul>
-  <% @cart.each do |game| %>
 
-    <li><%= game.title  %> | <%= number_to_currency(game.cost / 100.0) %> </li>
+    <% @cart.each do |game| %>
+  <ul>
+     <li>Title:<%= game.title %></li>
+     <li>Cost: <%= number_to_currency(game.cost / 100) %></li>
 
-  <% end %>
+  </ul>
+    <% end %>
+
+<%= link_to "Checkout", "", id: "stripe" %> 
+<%= javascript_pack_tag "stripe" %>  
 
 
-</ul>

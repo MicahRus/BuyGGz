@@ -1,0 +1,10 @@
+<%= render 'shared/navbar' %>
+  <ul>
+    <% @cart.each do |game| %>
+     <%= render 'shared/card' %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "Checkout", "", id: "stripe" %> 
+<%= javascript_pack_tag "stripe" %>  
