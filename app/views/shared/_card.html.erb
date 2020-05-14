@@ -7,7 +7,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Price: $<%= (game.cost / 100).round(2)%></li>
     <li class="list-group-item">Console: <%= game.platform %></li>
-    <li class="list-group-item"><%= link_to game.posted_by, "#{User.find(game.user_id).username}" %></li>
+    <li class="list-group-item"><%= link_to game.posted_by, game.user.username %></li>
   </ul>
   <div class="card-body">
     <%= link_to 'Add to cart', carts_path(game_id: game.id), method: :post %>
