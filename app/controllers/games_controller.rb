@@ -30,7 +30,6 @@ class GamesController < ApplicationController
   end
 
   def update
-
     if @game.update(game_params)
       @game.update(cost: (@game.cost * 100))
       redirect_to game_path(@game)
