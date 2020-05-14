@@ -55,3 +55,6 @@ gem "faker", "~> 2.11"
 gem "cancancan", "~> 3.1"
 
 gem "aws-sdk-s3", "~> 1.64"
+
+
+gem "stripe", "~> 5.22"

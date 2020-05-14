@@ -3,12 +3,6 @@ counter_2 = 3
 
 puts '*' * 24
 
-puts "Destroying old data"
-
-User.destroy_all
-Game.destroy_all
-
-puts 'Data successfully destroyed ✅'
 
 puts ""
 puts 'Seeding Users'
