@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show]
   resources :games
-  resources :carts, only: [:index, :create]
+  resources :carts, only: [:index, :create, :destroy]
 
 # stripe
   get "/payments/session", to: "payments#get_stripe_id"

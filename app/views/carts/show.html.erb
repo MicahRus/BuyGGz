@@ -1,15 +1,7 @@
 <%= render 'shared/navbar' %>
-
-<% if @cart.empty? %>
-  You don't have any items in your shopping cart :(
-<p>
-    <%= link_to "Click here", root_path %>
-    To go shopping
-</p>
-<% else %>
   <ul>
     <% @cart.each do |game| %>
-      <li><%= game.title  %> | <%= number_to_currency(game.cost / 100.0) %> </li>
+     <%= render 'shared/card' %>
     <% end %>
   </ul>
 <% end %>

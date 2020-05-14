@@ -2,22 +2,15 @@
 <h1> Cart </h1>
 
 
-<% if @cart.empty? %>
-  You don't have any items in your shopping cart :(
-<p>
-    <%= link_to "Click here", root_path %>
-    To go shopping
-</p>
-<% else %>
-  <ul>
     <% @cart.each do |game| %>
-      <li><%= game.title  %> | <%= number_to_currency(game.cost / 100.0) %> </li>
-    <% end %>
+  <ul>
+     <li>Title:<%= game.title %></li>
+     <li>Cost: <%= number_to_currency(game.cost / 100) %></li>
+
   </ul>
-<% end %>
+    <% end %>
 
 <%= link_to "Checkout", "", id: "stripe" %> 
 <%= javascript_pack_tag "stripe" %>  
-
 
 
