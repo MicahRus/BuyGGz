@@ -20,9 +20,9 @@
    <% end %>
    <% if current_user.id != @game.user_id %>
       <%= link_to 'Add to cart', carts_path(game_id: @game.id), method: :post %>
-      <%= link_to "Pay Deposit", "", id: "stripe" %>
       <%= link_to "Back", :back %>
    <% end %>
  </div>
 
+  <%= link_to "Checkout", "", id: "stripe" %>
  <%= javascript_pack_tag "stripe" %>
