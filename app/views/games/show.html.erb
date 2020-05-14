@@ -18,9 +18,11 @@
      <%= link_to "Edit", edit_game_path(@game.id) %>
      <%= link_to "Delete", game_path(@game.id), method: :delete %>
    <% end %>
-    <%= link_to 'Add to cart', carts_path(game_id: @game.id), method: :post %>
-    <%= link_to "Pay Deposit", "", id: "stripe" %>
-   <%= link_to "Back", :back %>
+   <% if current_user.id != @game.user_id %>
+      <%= link_to 'Add to cart', carts_path(game_id: @game.id), method: :post %>
+      <%= link_to "Pay Deposit", "", id: "stripe" %>
+      <%= link_to "Back", :back %>
+   <% end %>
  </div>
 
  <%= javascript_pack_tag "stripe" %>

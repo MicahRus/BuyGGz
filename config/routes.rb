@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   post "/payments/webhook", to: "payments#webhook"
 
   get '/:username', to: 'users#show', as: :username
+  
   root to: "users#index"
 end
