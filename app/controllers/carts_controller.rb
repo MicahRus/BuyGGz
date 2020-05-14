@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-
   def index
     if user_signed_in? && current_user.cart
       @cart = current_user.cart.games
@@ -16,6 +15,6 @@ class CartsController < ApplicationController
     end
     game = Game.find(params[:game_id])
     cart.games << game
-     redirect_to request.referer
+    redirect_to request.referer
   end
 end
