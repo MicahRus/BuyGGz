@@ -15,6 +15,7 @@ class GamesController < ApplicationController
 
   def create
     @game = current_user.games.create(game_params)
+    @game.cost = @game.cost * 100
     if @game.save
       redirect_to @game
       flash[:success] = "You successfully created a new game!"
@@ -25,10 +26,12 @@ class GamesController < ApplicationController
   end
 
   def edit
+    @game.cost = @game.cost / 100
   end
 
   def update
     if @game.update(game_params)
+      @game.update(cost: (@game.cost * 100))
       redirect_to game_path(@game)
     else
       redirect_to request.referer
