@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_232259) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
