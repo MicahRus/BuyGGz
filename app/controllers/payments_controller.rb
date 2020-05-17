@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
   def success
     @cart = current_user.cart
     @cart.games.each do |game|
-      game.is_sold = true
+      game.is_sold == true
     end
     @cart.destroy
   end

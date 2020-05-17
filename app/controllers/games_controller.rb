@@ -15,6 +15,7 @@ class GamesController < ApplicationController
 
   def create
     @game = current_user.games.create(game_params)
+    @game.posted_by = current_user.username
     @game.cost = @game.cost * 100
     if @game.save
       redirect_to @game
