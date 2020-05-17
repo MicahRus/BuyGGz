@@ -1,8 +1,12 @@
 class Game < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+
   has_many :cart_items
   has_many :carts, through: :cart_items
+  
+  has_many :wishlist_items
+  has_many :wishlists, through: :wishlist_items
 
   def self.search(search)
     if search
