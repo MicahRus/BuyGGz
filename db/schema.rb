@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_232259) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "in_cart", default: false
     t.boolean "is_sold", default: false
-    t.boolean "in_wishlist"
+    t.boolean "in_wishlist", default: false
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
