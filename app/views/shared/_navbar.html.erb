@@ -10,9 +10,9 @@
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
             <li class="nav-item">
-                <%= link_to "/#{current_user.username}", class: "nav-link" do %>
-                    <%= current_user.username.capitalize %>
-                <% end %>
+              <%= link_to "/#{current_user.username}", class: "nav-link" do %>
+                  <%= current_user.username.capitalize %>
+              <% end %>
             </li>
             <li class="nav-item"><%= link_to "🎁", wishlists_path, class: "nav-link" %></li>
 
