@@ -16,6 +16,13 @@ puts ""
 puts 'Seeding Users'
 
 User.create({
+  username: "admin",
+  email: "admin@gmail.com",
+  password: "password",
+  profile_pic: nil,
+  is_admin: true
+})
+User.create({
   username: "test_user_1",
   email: "Test_user_1@gmail.com",
   password: "password",
@@ -29,13 +36,6 @@ User.create({
   profile_pic: nil
 })
 
-User.create({
-  username: "admin",
-  email: "admin@gmail.com",
-  password: "password",
-  profile_pic: nil,
-  is_admin: true
-})
 
 10.times do 
   User.create({
@@ -63,7 +63,7 @@ random_price_2 = rand(1000..15000).round(-1)
 
 
   game = Game.create({
-    user_id: 1,
+    user_id: 2,
     title: Faker::Game.title,
     cost: random_price,
     platform: Faker::Game.platform,
@@ -75,7 +75,7 @@ random_price_2 = rand(1000..15000).round(-1)
   game.image.attach(io: File.open("app/assets/images/pic#{counter}.jpeg"), filename: "pic#{counter}.jpeg") if game['image'].nil?
 
   game = Game.create({
-    user_id: 2,
+    user_id: 3,
     title: Faker::Game.title,
     cost: random_price_2,
     platform: Faker::Game.platform,
