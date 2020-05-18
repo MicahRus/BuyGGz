@@ -1,9 +1,7 @@
+require 'db/platforms.rb'
 counter = 0
 counter_2 = 3
-platforms = []
-31.times do 
-  platforms << Faker::Game.unique.platform
-end
+
 
 puts '*' * 24
 

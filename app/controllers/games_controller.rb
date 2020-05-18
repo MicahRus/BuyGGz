@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :find_game, only: [:show, :edit, :update, :destroy]
+  before_action :platforms, only: [:new]
   load_and_authorize_resource
 
   def index
@@ -53,5 +54,11 @@ class GamesController < ApplicationController
 
   def find_game
     @game = Game.find(params[:id])
+  end
+
+  def platforms
+    @platforms = [
+      "macOS", "Game Boy Advance", "Xbox One", "Xbox", "Windows", "Nintendo DS", "GameCube", "Nintendo 64", "PlayStation Portable", "Game Gear", "PlayStation 2", "Nintendo DSi", "Sega Master System", "Super Nintendo Entertainment System", "Virtual Boy", "Wii", "Xbox 360", "Game Boy", "PlayStation 3", "PlayStation 4", "PlayStation Vita", "Game Boy Color", "Linux", "Sega Dreamcast", "Sega Genesis", "Nintendo Entertainment System", "Nintendo Switch", "Wii U", "Nintendo 3DS", "PlayStation", "Sega Saturn"
+      ]
   end
 end
