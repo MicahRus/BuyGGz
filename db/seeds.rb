@@ -41,6 +41,12 @@ counter += 1
 counter_2 += 1
 random_price = rand(1000..15000).round(-1)
 random_price_2 = rand(1000..15000).round(-1)
+platforms = []
+31.times do 
+  platforms << Faker::Game.unique.platform
+end
+
+
 
 
   game = Game.create({
