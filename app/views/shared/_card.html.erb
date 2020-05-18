@@ -14,9 +14,16 @@
        <div class="card-body">
         <%= link_to 'Add to cart', carts_path(game_id: game.id), method: :post %>
         </div>
-       <div class="card-body">
-        <%= link_to 'Add to wishlist', wishlists_path(game_id: game.id), method: :post %>
+        <% if game.in_wishlist != true %>
+         <div class="card-body">
+          <%= link_to 'Add to wishlist', wishlists_path(game_id: game.id), method: :post %>
         </div>
+        <% else %>
+        <div class="card-body">
+          Item is in your wishlist! :) "Add Remove button here"
+        </div>
+
+        <% end %>
         <div class="card-body">
         <div class="show-edit-delete">
           <%= link_to "Edit", edit_game_path(game.id) %>

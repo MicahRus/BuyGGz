@@ -6,7 +6,6 @@
         <div class="col-5 m-auto">
             <% @wishlist.reverse_each do |game| %>
                 <%= render 'shared/card', game: game %>
-                <%= link_to wishlist_path %>
             <% end %>
           </div>
         </div>
