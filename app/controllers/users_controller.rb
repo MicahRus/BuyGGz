@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(username: params[:username])[0]
-    # @user = User.find(params[:id])
+    if user_signed_in?
+      @user = User.where(username: params[:username])[0]
+    else
+      @user = User.find(params[:id])
+    end
   end
 end

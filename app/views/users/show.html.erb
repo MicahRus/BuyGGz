@@ -1,5 +1,7 @@
 <%= render 'shared/navbar' %>
-<h1> <%= @user.username %> </h1>
+<% if user_signed_in? %>
+  <h1> <%= @user.username %> </h1>
+<% end %>
 
 <div class="container p-5">
     <div class="row">
