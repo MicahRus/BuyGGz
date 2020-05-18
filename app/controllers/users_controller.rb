@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @games = Game.all
+    @games = Game.order(:cost).page(params[:page])
   end
 
   def show
