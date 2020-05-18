@@ -3,10 +3,17 @@
 
 
     <% @cart.each do |game| %>
+      <div class="card" style="width: 18rem;">
+        <% if game.image.attached? %>
+         <img class="card-img-top" alt='picture of' <% game.title %><%= image_tag game.image %>
+        <% else %>
+          <img class="card-img-top" alt='Default image' <%= image_tag "default_image.png" %> 
+        <% end %>
+      </div>
+
   <ul>
      <li>Title:<%= game.title %></li>
      <li>Cost: <%= number_to_currency(game.cost / 100) %></li>
-
   </ul>
     <% end %>
 

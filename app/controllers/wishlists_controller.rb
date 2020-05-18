@@ -2,7 +2,7 @@ class WishlistsController < ApplicationController
   def index
     @user = current_user
     if user_signed_in? && current_user.wishlist
-      @wishlist = current_user.wishlist.games
+      @wishlist = current_user.wishlist.wishlist_items
     else
       flash[:no_wishlist] = "You currently don't have any items in your wishlist"
       redirect_to request.referer
