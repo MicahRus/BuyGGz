@@ -5,8 +5,6 @@
     <% else %>
       <img class="card-img-top" alt='Default image' <%= image_tag "default_image.png" %> 
     <% end %>
-
-
     <div class="card-body">
       <h5 class="card-title"><%= link_to game.title, game_path(game.id)%></h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
