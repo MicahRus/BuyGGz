@@ -5,7 +5,7 @@ class WishlistItemsController < ApplicationController
     @game.in_wishlist = false
     @game.save
     @wishlist_item.destroy
-    
+
     redirect_to request.referer
   end
 end
