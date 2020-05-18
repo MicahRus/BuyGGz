@@ -5,10 +5,10 @@
   <div class="container">
       <div class="row">
           <div class="col-5 m-auto">
-            <% if @game.is_sold != true %>
-              <%= render 'shared/card', game: @game %>
+            <% if @game.is_sold = true || game.in_cart = true%>
+              <h5>Sorry this game has been sold! :(</h5>
               <% else %>
-              Sorry this game has been sold! :(
+              <%= render 'shared/card', game: @game %>
             <% end %>
           </div>
       </div>
