@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   def index
+    @user = current_user
     if user_signed_in? && current_user.cart
       @cart = current_user.cart.games
     else
@@ -22,10 +23,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    @cart = current_user.cart
     @cart.cart_item.destroy
   end
-  # def show
-  #   @cart = current_user.cart.games
-  #   @user = User.find(current_user.id)
-  # end
 end

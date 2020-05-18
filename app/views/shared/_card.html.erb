@@ -13,8 +13,10 @@
          <% if current_user.is_admin == true%>
        <div class="card-body">
         <%= link_to 'Add to cart', carts_path(game_id: game.id), method: :post %>
-        <a href="#" class="card-link">Add to wishlist</a>
-      </div>
+        </div>
+       <div class="card-body">
+        <%= link_to 'Add to wishlist', wishlists_path(game_id: game.id), method: :post %>
+        </div>
         <div class="card-body">
         <div class="show-edit-delete">
           <%= link_to "Edit", edit_game_path(game.id) %>
@@ -32,8 +34,11 @@
       <% else %>
         <div class="card-body">      
           <%= link_to 'Add to cart', carts_path(game_id: game.id), method: :post %>
-          <a href="#" class="card-link">Add to wishlist</a>
         </div>
+        <div class="card-body">
+          <%= link_to 'Add to wishlist', wishlists_path(game_id: game.id), method: :post %>
+        </div>
+
       <% end %>
     <% end %>
   </div>

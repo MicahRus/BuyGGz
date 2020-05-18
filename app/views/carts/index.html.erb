@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<h1> Cart </h1>
+<h1> <%= @user.username %>'s cart </h1>
 
 
     <% @cart.each do |game| %>
@@ -9,6 +9,7 @@
 
   </ul>
     <% end %>
+
 
 <%= link_to "Checkout", "", id: "stripe" %> 
 <%= javascript_pack_tag "stripe" %>  
