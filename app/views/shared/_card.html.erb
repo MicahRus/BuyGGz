@@ -25,7 +25,7 @@
         </div>
         <% else %>
         <div class="card-body">
-          Item is in your wishlist! :) "Add Remove button here"
+          <%= link_to "Remove from wishlist", wishlist_item_path(game.id), method: :delete%>
         </div>
 
         <% end %>
