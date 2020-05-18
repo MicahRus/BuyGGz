@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :games
   resources :carts, only: [:index, :create, :destroy]
+  resources :wishlists, only: [:index, :create, :destroy]
+  resources :wishlist_items, only: [:destroy]
 
 # stripe
   get "/payments/session", to: "payments#get_stripe_id"

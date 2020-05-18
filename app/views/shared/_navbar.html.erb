@@ -14,8 +14,10 @@
                     <%= current_user.username.capitalize %>
                 <% end %>
             </li>
+            <li class="nav-item"><%= link_to "🎁", wishlists_path, class: "nav-link" %></li>
 
             <li class="nav-item"><%= link_to "New Game", new_game_path, class: "nav-link" %></li>
+
 
         <% end %>
         <li class="nav-item">
@@ -32,7 +34,7 @@
           <%= text_field_tag(:search, params[:search])%>
           <%= submit_tag ("Search")%>
         <% end %>
-        <li class="nav-item"><%= link_to "🛒", carts_path(user_id: current_user.id), class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "🛒", carts_path, class: "nav-link" %></li>
     </ul>
   </div>
 </nav>

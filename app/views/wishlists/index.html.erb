@@ -1,0 +1,13 @@
+<%= render 'shared/navbar' %>
+<h1> <%= @user.username %> </h1>
+
+<div class="container p-5">
+    <div class="row">
+        <div class="col-5 m-auto">
+            <% @wishlist.reverse_each do |game| %>
+                <%= render 'shared/card', game: game %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+</div>
