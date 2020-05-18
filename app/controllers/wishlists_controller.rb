@@ -23,6 +23,5 @@ class WishlistsController < ApplicationController
   end
 
   def destroy
-
   end
 end
