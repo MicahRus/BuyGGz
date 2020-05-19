@@ -2,20 +2,21 @@
 <h1> <%= @user.username %>'s cart </h1>
 
 
-    <% @cart.each do |game| %>
-      <div class="card" style="width: 18rem;">
-        <% if game.image.attached? %>
-         <img class="card-img-top" alt='picture of' <% game.title %><%= image_tag game.image %>
-        <% else %>
-          <img class="card-img-top" alt='Default image' <%= image_tag "default_image.png" %> 
-        <% end %>
-      </div>
+<% @cart.each do |game| %>
+  <div class="card" style="width: 18rem;">
+    <% if game.image.attached? %>
+      <img class="card-img-top" alt='picture of' <% game.title %><%= image_tag game.image %>>
+    <% else %>
+      <img class="card-img-top" alt='Default image' <%= image_tag "default_image.png" %> 
+    <% end %>
+  </div>
 
   <ul>
-     <li>Title:<%= game.title %></li>
-     <li>Cost: <%= number_to_currency(game.cost / 100) %></li>
+     <li><%= link_to game.title, game_path(game.id) %></li>
+     <li><%= number_to_currency(game.cost / 100) %></li>
+     <%= link_to "Remove from cart", cart_item_path(game.id), method: :delete%>
   </ul>
-    <% end %>
+<% end %>
 
 
 <%= link_to "Checkout", "", id: "stripe" %> 
