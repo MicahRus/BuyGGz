@@ -1,7 +1,9 @@
 class PaymentsController < ApplicationController
+  # Allows stripe to work with webhooks without an authenticity token
   skip_before_action :verify_authenticity_token, only: [:webhook]
   def success
     @cart = current_user.cart
+    # If the page successfully load it changes each game in the database to be sold
     @cart.games.each do |game|
       game.is_sold == true
     end
