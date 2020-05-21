@@ -13,7 +13,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Price: $<%= (game.cost / 100).round(2)%></li>
       <li class="list-group-item">Console: <%= game.platform %></li>
-      <li class="list-group-item"><%= link_to game.posted_by, game.user.username %></li>
+      <li class="list-group-item"><%= link_to game.posted_by, username_path(game.user.username) %></li>
     </ul>
          <% if current_user.is_admin == true%>
        <div class="card-body">
