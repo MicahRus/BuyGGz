@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   def index
     @user = current_user
+    # Checks if the user is signed in and already has an active cart
     if user_signed_in? && current_user.cart
       @cart = current_user.cart.games.includes([:image_attachment])
     else
@@ -10,6 +11,7 @@ class CartsController < ApplicationController
   end
 
   def create
+    # Checks if the user has a cart, if they do it loads that cart.
     if !current_user.cart
       cart = Cart.create(completed: false, user_id: current_user.id)
     else
