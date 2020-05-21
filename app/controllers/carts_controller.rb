@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   def index
     @user = current_user
     if user_signed_in? && current_user.cart
-      @cart = current_user.cart.games
+      @cart = current_user.cart.games.includes([:image_attachment])
     else
       flash[:no_cart] = "You currently don't have any items in your cart"
       redirect_to request.referer

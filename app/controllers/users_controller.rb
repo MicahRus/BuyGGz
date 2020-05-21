@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @games = Game.order(:cost).page(params[:page])
+    @games = Game.order(:cost).includes([:image_attachment, :user]).page(params[:page])
   end
 
   def show
