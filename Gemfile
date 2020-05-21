@@ -43,6 +43,7 @@ group :development do
 
   # Linting
   gem 'rubocop-rails'
+  gem 'bullet'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

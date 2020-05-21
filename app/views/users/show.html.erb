@@ -6,7 +6,7 @@
 <div class="container p-5">
     <div class="row">
         <div class="col-5 m-auto">
-            <% @user.games.reverse_each do |game| %>
+            <% @user.games.includes([:image_attachment]).reverse_each do |game| %>
                 <%= render 'shared/card', game: game %>
 
       
