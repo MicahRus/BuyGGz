@@ -1,0 +1,68 @@
+Project games_marketplace {
+  database_type: "PostgreSQL"
+}
+
+Table user {
+
+  id bigint pk
+  username text
+  email text
+  password password
+  profile_pic text
+  
+}
+
+Table game {
+
+  id bigint pk
+  user_id text
+  title string
+  cost integer
+  platform string
+  image text
+  posted_by string
+  posted_on datetime
+  
+}
+
+Table cart {
+
+id bigint pk
+user_id integer
+}
+
+Table cart_item {
+
+id bigint pk
+cart_id fk
+game_id fk
+}
+
+
+Table wishlist {
+
+  id bigint pk
+  user_id integer
+}
+
+Table wishlist_item {
+
+  id bigint pk
+  wishlist_id integer
+  game_id integer
+}
+
+
+Ref: "user"."id" < "game"."user_id"
+
+Ref: "user"."id" - "wishlist"."user_id"
+
+Ref: "user"."id" - "cart"."user_id"
+
+Ref: "game"."id" < "wishlist_item"."game_id"
+
+Ref: "cart"."id" < "cart_item"."cart_id"
+
+Ref: "cart_item"."game_id" < "game"."id"
+
+Ref: "game"."id" < "wishlist_item"."wishlist_id"
