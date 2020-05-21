@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :find_game, only: [:show, :edit, :update, :destroy]
-  before_action :platforms, only: [:new]
+  before_action :platforms, only: [:new, :edit]
   load_and_authorize_resource
 
   def index
